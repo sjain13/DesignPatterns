@@ -1,0 +1,12 @@
+FACADE DESIGN PATTERN:
+
+- It is a cool design pattern that cleans up your interaction with complex systems.
+- Provides simple interface to complex system
+- Minimizes Communication between dependencies between systems. 
+- It is more like a helper for the client applications.  It doesn't hide subsystem interfaces from the client. Whether to use facade or not is completely dependent on client code.
+Real Use Case : 
+1. Hotel Frontdesk which communicates to other departments without the guest knowing what is happening at the backend of other department.
+2. Start Button on Computer which takes care of staring and all the system components are loaded in the memory and ready to use.
+	for example, loading the boot sector from the hard drive, loading the OS into memory, and initializing the CPU
+
+
