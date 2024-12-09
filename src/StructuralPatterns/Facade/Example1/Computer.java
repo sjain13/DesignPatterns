@@ -1,4 +1,4 @@
-package StructuralPatterns.Facade;
+package StructuralPatterns.Facade.Example1;
 
 public class Computer {
 	private CPU cpu = new CPU();

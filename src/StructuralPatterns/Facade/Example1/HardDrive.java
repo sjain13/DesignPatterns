@@ -1,4 +1,4 @@
-package StructuralPatterns.Facade;
+package StructuralPatterns.Facade.Example1;
 
 public class HardDrive {
 	String readBootSector() {

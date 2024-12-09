@@ -1,5 +1,4 @@
 FACADE DESIGN PATTERN:
-
 - It is a cool design pattern that cleans up your interaction with complex systems.
 - Provides simple interface to complex system
 - Minimizes Communication between dependencies between systems. 
