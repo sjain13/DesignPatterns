@@ -7,7 +7,7 @@
 - [Bulkhead](#bulkhead)
 - [Saga Pattern](#saga-pattern)
 - [Event-Driven Architecture](#event-driven-architecture)
-- [Strangler Fig](#strangler-fig)
+- [Strangler Fig Pattern](#strangler-fig)
 
 ## Circuit Breaker
 In a microservices architecture, failures are inevitable. But how do we stop one failure from cascading and impacting the entire system? 🔌 This is where the Circuit Breaker Pattern comes to the rescue! ⚡
