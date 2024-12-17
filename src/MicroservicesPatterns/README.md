@@ -1,10 +1,37 @@
-**Microservices Design Patterns**
+# Microservices Design Patterns
 
-[TOCM]
+- [Circuit Breaker](#circuit-breaker)
+- [Service Discovery](#service-discovery)
+- [API Gateway](#api-gateway)
+- [Retry Pattern](#retry-pattern)
+- [Bulkhead](#bulkhead)
+- [Saga Pattern](#saga-pattern)
+- [Event-Driven Architecture](#event-driven-architecture)
+- [Strangler Fig](#strangler-fig)
 
-[TOC]
+## Circuit Breaker
+... Content about Circuit Breaker ...
 
-#Circuit Breaker
+## Service Discovery
+... Content about Service Discovery ...
+
+## API Gateway
+... Content about API Gateway ...
+
+## Retry Pattern
+... Content about Retry Pattern ...
+
+## Bulkhead
+... Content about Bulkhead ...
+
+## Saga Pattern
+... Content about Saga Pattern ...
+
+## Event-Driven Architecture
+... Content about Event-Driven Architecture ...
+
+## Strangler Fig
+... Content about Strangler Fig ...
 
 In a microservices architecture, failures are inevitable. But how do we stop one failure from cascading and impacting the entire system? 🔌 This is where the Circuit Breaker Pattern comes to the rescue! ⚡
 
