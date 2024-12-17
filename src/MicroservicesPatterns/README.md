@@ -133,8 +133,7 @@ Here are popular tools used for implementing Service Discovery:
 ✅ Tools like **Eureka**, **Consul**, and **Kubernetes** simplify implementation.  
 ✅ Real-world giants like **Netflix**, **Uber**, and **Amazon** rely on service discovery to maintain system scalability and resilience.
 
-## API Gateway
-# API Gateway Microservices Pattern
+# API Gateway
 
 The **API Gateway Microservices Pattern** is a design pattern that provides a single entry point for clients to interact with a set of microservices in a system. It acts as a reverse proxy, routing requests from clients to the appropriate backend microservices. This pattern helps in managing cross-cutting concerns such as security, logging, load balancing, authentication, and request aggregation.
 
