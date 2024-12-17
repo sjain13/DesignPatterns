@@ -480,7 +480,7 @@ The **Saga Pattern** is a powerful approach to managing long-running transaction
 ## Event-Driven Architecture
 ... Content about Event-Driven Architecture ...
 
-# Strangler Fig Pattern
+# Strangler Fig
 
 The **Strangler Fig Pattern** is a software migration pattern used when refactoring or migrating a legacy system to a new system, often in a microservices-based architecture. It allows for gradual replacement of the old system with the new system without requiring a full rewrite or downtime. The pattern is named after the strangler fig tree, which grows around an existing tree and eventually replaces it.
 
