@@ -53,77 +53,85 @@ This avoids delays and improves user experience even during service failures.
 ✅ Always have a fallback strategy to handle failures gracefully. 
 
 ## Service Discovery
-🔹 Why Use Service Discovery?
+### 🔹 Why Use Service Discovery?
 In a microservices architecture, services communicate with each other over a network. Managing service locations manually becomes difficult because:
 
-Dynamic Scaling: Services may scale up or down dynamically, leading to frequent changes in IP addresses or ports.
-Service Failure: A service instance might fail, and others need to take over.
-Deployment Across Environments: Services may be deployed across different regions, environments (e.g., dev, QA, production), or cloud platforms.
-Service Discovery automates the process of locating services so they can communicate efficiently without manual configuration.
+**Dynamic Scaling**: Services may scale up or down dynamically, leading to frequent changes in IP addresses or ports.  
+**Service Failure**: A service instance might fail, and others need to take over.  
+**Deployment Across Environments**: Services may be deployed across different regions, environments (e.g., dev, QA, production), or cloud platforms.  
 
-🔹 How Does Service Discovery Work?
+**Service Discovery** automates the process of locating services so they can communicate efficiently without manual configuration.
+
+---
+
+### 🔹 How Does Service Discovery Work?
 Service discovery can be implemented in two ways:
 
-1️⃣ Client-Side Service Discovery:
+#### 1️⃣ Client-Side Service Discovery:
+- Clients are responsible for discovering the service's location.  
+- The client queries a **Service Registry** to fetch the available service instances and load-balances the requests.  
+- **Example Flow**: The client contacts the **Service Registry** ➞ fetches the IP and port of a service ➞ calls the appropriate service instance.  
+- **Tools**: Eureka, Consul, or ZooKeeper.  
 
-Clients are responsible for discovering the service's location.
-The client queries a Service Registry to fetch the available service instances and load-balances the requests.
-Example Flow:
-The client contacts the Service Registry → fetches the IP and port of a service → calls the appropriate service instance.
-Tools: Eureka, Consul, or ZooKeeper.
-2️⃣ Server-Side Service Discovery:
+#### 2️⃣ Server-Side Service Discovery:
+- The service registry integrates with a **load balancer** (e.g., NGINX, HAProxy) to distribute requests.  
+- The client makes requests to a fixed endpoint, and the load balancer fetches service details from the service registry to forward the request to the correct instance.  
+- **Example Flow**: The client sends a request to the load balancer ➞ load balancer queries the **Service Registry** ➞ routes the request to an appropriate instance.  
+- **Tools**: AWS ALB, Kubernetes Services, or F5 Load Balancer.  
 
-The service registry integrates with a load balancer (e.g., NGINX, HAProxy) to distribute requests.
-The client makes requests to a fixed endpoint, and the load balancer fetches service details from the service registry to forward the request to the correct instance.
-Example Flow:
-The client sends a request to the load balancer → load balancer queries the Service Registry → routes the request to an appropriate instance.
-Tools: AWS ALB, Kubernetes Services, or F5 Load Balancer.
+---
 
-🔹 Tools for Service Discovery
+### 🔹 Tools for Service Discovery
 Here are popular tools used for implementing Service Discovery:
 
-Eureka (Netflix)
+#### **Eureka (Netflix)**
+- A popular client-side service discovery tool.  
+- Eureka Server acts as a **Service Registry** where services register themselves.  
+- Eureka Client enables services to discover other services dynamically.  
 
-A popular client-side service discovery tool.
-Eureka Server acts as a Service Registry where services register themselves.
-Eureka Client enables services to discover other services dynamically.
-Consul (by HashiCorp)
+#### **Consul (by HashiCorp)**
+- Supports both **service discovery** and **health checks**.  
+- Provides key-value storage for configuration and works well in distributed environments.  
 
-Supports both service discovery and health checks.
-Provides key-value storage for configuration and works well in distributed environments.
-Kubernetes Service Discovery
+#### **Kubernetes Service Discovery**
+- In Kubernetes, services are discovered using **DNS** or environment variables.  
+- Kubernetes automatically tracks the IPs of pods and exposes services dynamically.  
 
-In Kubernetes, services are discovered using DNS or environment variables.
-Kubernetes automatically tracks the IPs of pods and exposes services dynamically.
-ZooKeeper
+#### **ZooKeeper**
+- An older but reliable solution for service discovery and distributed coordination.  
+- Used in Apache Kafka for managing brokers.  
 
-An older but reliable solution for service discovery and distributed coordination.
-Used in Apache Kafka for managing brokers.
-AWS Cloud Map
+#### **AWS Cloud Map**
+- A fully managed service discovery solution that allows services to register and discover across AWS environments.  
 
-A fully managed service discovery solution that allows services to register and discover across AWS environments.
-🔹 Real-World Examples
-1️⃣ Netflix 🎥
+---
 
-Netflix uses Eureka for client-side service discovery.
-Each microservice registers itself with the Eureka Server, and other services discover the instances dynamically.
-2️⃣ Uber 🚗
+### 🔹 Real-World Examples
 
-Uber uses Consul for service discovery.
-Consul ensures that when a service instance is added, removed, or fails, its state is updated in real-time, and healthy instances are discovered quickly.
-3️⃣ Spotify 🎵
+#### 1️⃣ **Netflix** 🎥
+- Netflix uses **Eureka** for client-side service discovery.  
+- Each microservice registers itself with the **Eureka Server**, and other services discover the instances dynamically.  
 
-Spotify uses Kubernetes for managing and discovering microservices.
-Services register as Kubernetes Pods, and Kubernetes Services expose endpoints dynamically.
-4️⃣ Amazon 🌐
+#### 2️⃣ **Uber** 🚗
+- Uber uses **Consul** for service discovery.  
+- Consul ensures that when a service instance is added, removed, or fails, its state is updated in real-time, and healthy instances are discovered quickly.  
 
-Amazon leverages AWS Cloud Map for service discovery across its infrastructure.
-Services running on EC2, ECS, or Lambda can be registered and discovered seamlessly.
-🔹 Key Takeaways
-✅ Service Discovery ensures seamless communication between microservices in dynamic environments.
-✅ Choose client-side or server-side discovery based on architecture needs.
-✅ Tools like Eureka, Consul, and Kubernetes simplify implementation.
-✅ Real-world giants like Netflix, Uber, and Amazon rely on service discovery to maintain system scalability and resilience.
+#### 3️⃣ **Spotify** 🎵
+- Spotify uses **Kubernetes** for managing and discovering microservices.  
+- Services register as Kubernetes Pods, and **Kubernetes Services** expose endpoints dynamically.  
+
+#### 4️⃣ **Amazon** 🌐
+- Amazon leverages **AWS Cloud Map** for service discovery across its infrastructure.  
+- Services running on **EC2**, **ECS**, or **Lambda** can be registered and discovered seamlessly.  
+
+---
+
+### 🔹 Key Takeaways
+
+✅ **Service Discovery** ensures seamless communication between microservices in dynamic environments.  
+✅ Choose **client-side** or **server-side discovery** based on architecture needs.  
+✅ Tools like **Eureka**, **Consul**, and **Kubernetes** simplify implementation.  
+✅ Real-world giants like **Netflix**, **Uber**, and **Amazon** rely on service discovery to maintain system scalability and resilience.
 
 ## API Gateway
 ... Content about API Gateway ...
