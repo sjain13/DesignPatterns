@@ -290,7 +290,7 @@ Several tools and frameworks can help implement the **Retry Pattern**:
 The **Retry Pattern** is an essential strategy in modern distributed systems, especially in microservices architectures, where transient failures are inevitable. By implementing retries with appropriate backoff strategies, systems can remain resilient and provide uninterrupted services to end users.
 
 
-# Bulkhead Microservices Pattern
+# Bulkhead
 
 The **Bulkhead Pattern** is a design pattern used in microservices architectures to isolate failures and prevent them from cascading across the system. It is inspired by the bulkheads in ships, which divide the ship into sections to prevent a breach in one section from sinking the entire ship. In a microservices context, the Bulkhead Pattern ensures that a failure in one service or component does not affect other parts of the system by creating isolation or "compartments."
 
