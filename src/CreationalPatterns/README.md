@@ -242,11 +242,11 @@ In complex systems, such as those using OSGi or web containers, multiple classlo
 Ensure that the Singleton class is loaded by a single classloader, preventing the creation of multiple instances.
 
 ## Summary of Solutions
-**Reflection:** Prevent instantiation via reflection by throwing an exception in the constructor if an instance already exists.
-**Serialization:** Use readResolve() to ensure deserialization returns the same instance.
-**Cloning**: Override the clone() method to prevent cloning.
-**Threading:** Use volatile for the Singleton instance and ensure proper synchronization.
-**Classloaders:** Ensure the Singleton class is loaded by a single classloader in a system with multiple classloaders.
+- **Reflection:** Prevent instantiation via reflection by throwing an exception in the constructor if an instance already exists.
+- **Serialization:** Use readResolve() to ensure deserialization returns the same instance.
+- **Cloning**: Override the clone() method to prevent cloning.
+- **Threading:** Use volatile for the Singleton instance and ensure proper synchronization.
+- **Classloaders:** Ensure the Singleton class is loaded by a single classloader in a system with multiple classloaders.
 
 
 
