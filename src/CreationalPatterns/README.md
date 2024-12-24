@@ -41,7 +41,7 @@ Creational Design Patterns play a crucial role in making software designs more m
 
 # Creational Design Patterns
 
-- [Singleton Pattern](#Singleton Pattern)
+- [Singleton Pattern](#Singleton-Pattern)
 
 # Singleton Pattern
 * Ensures that a class has only one instance and provides a global point of access to it.
