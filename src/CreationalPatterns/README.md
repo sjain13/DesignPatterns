@@ -66,7 +66,7 @@ public class Singleton {
         return instance;
     }
 }
-
+```
 # Singleton Pattern in Java
 
 ## Explanation
@@ -111,6 +111,7 @@ public class Singleton {
         return instance;
     }
 }
+```
 
 # Key Changes
 
