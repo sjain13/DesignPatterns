@@ -42,6 +42,10 @@ Creational Design Patterns play a crucial role in making software designs more m
 # Creational Design Patterns
 
 - [Singleton Pattern](#Singleton-Pattern)
+- [Factory Pattern](#Factory-Pattern)
+- [Abstract Factory Pattern](#Abstract-Factory-Pattern)
+- [Prototype Pattern](#Prototype-Pattern)
+- [Builder Pattern](#Builder-Pattern)
 
 # Singleton Pattern
 * Ensures that a class has only one instance and provides a global point of access to it.
@@ -248,5 +252,19 @@ Ensure that the Singleton class is loaded by a single classloader, preventing th
 - **Threading:** Use volatile for the Singleton instance and ensure proper synchronization.
 - **Classloaders:** Ensure the Singleton class is loaded by a single classloader in a system with multiple classloaders.
 
+# Factory Pattern
 
+## Advantages of the Factory Pattern:
+- **Decoupling Object Creation:** Client code does not need to know the exact class it is working with; it only relies on the interface or base class.
+- **Flexibility:** The factory method can be overridden in subclasses, making it easy to create new types of objects without changing the client code.
+- **Simplified Code:** The client code only needs to interact with the factory, reducing the complexity in object creation.
+  
+## When to Use the Factory Pattern:
+- When the exact type of the object to be created isn't known until runtime.
+- When the creation process involves multiple steps or complex logic.
+- To promote loose coupling between the client code and the specific classes it uses.
 
+# Abstract Factory Pattern
+The Abstract Factory Pattern is an extension of the Factory Method pattern. It allows the creation of families of related objects without specifying their concrete classes.
+
+The Abstract Factory Pattern is particularly useful when there are multiple families of related objects and you want to ensure that objects from the same family are used together.
