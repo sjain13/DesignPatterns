@@ -66,3 +66,59 @@ public class Singleton {
         return instance;
     }
 }
+
+# Singleton Pattern in Java
+
+## Explanation
+
+### Private Constructor
+- Ensures that the class cannot be instantiated from outside.
+
+### Static Instance Variable
+- Stores the single instance of the class.
+
+### Lazy Initialization
+- The instance is created only when it is needed (**lazy loading**).
+
+### Global Access Point
+- The `getInstance()` method provides a way to access the Singleton instance.
+
+---
+
+## Potential Issues with the Above Implementation
+- This implementation is **not thread-safe**. Multiple threads accessing `getInstance()` simultaneously might create multiple instances.
+
+---
+
+## Thread-Safe Singleton (with Double-Checked Locking)
+
+To make the Singleton thread-safe, consider the following approach:
+
+```java
+public class Singleton {
+    private static volatile Singleton instance;
+
+    private Singleton() {}
+
+    public static Singleton getInstance() {
+        if (instance == null) {
+            synchronized (Singleton.class) {
+                if (instance == null) {
+                    instance = new Singleton();
+                }
+            }
+        }
+        return instance;
+    }
+}
+
+# Key Changes
+
+## `volatile` Keyword
+- Ensures visibility and prevents instruction reordering issues.
+- When a variable is declared as `volatile`, it ensures that any thread that reads the value of the variable sees the most recent value written by any other thread.
+
+## Double-Checked Locking
+- Minimizes synchronization overhead by adding an additional `if` check outside the synchronized block.
+- This approach ensures that synchronization only occurs when the instance is being created, reducing the performance cost of synchronization on subsequent accesses after the instance has been initialized.
+
